@@ -5,7 +5,7 @@ import { BsStackOverflow } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <section className='max-w-7xl z-20 p-6'>
+    <section className='max-w-7xl z-20 p-6 mx-auto'>
         <div className='border-b-[0.1rem] border-zinc-700 w-full' />
         <div className='text-zinc-500 font-medium text-xs pt-2 sm:pt-4 text-center mb-4'>
             <p className='max-w-40 sm:max-w-full mx-auto'> Copyright © 2024 ABxDaily. All Rights Reserved. </p>
