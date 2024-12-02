@@ -15,7 +15,7 @@ const Layout = () => {
 
   return (
     <>
-        <div className='bg-zinc-900'>
+        <div className='bg-zinc-900 w-full'>
             <Header />            
             <Hero onScrollToBlogs={scrollToBlogs} />
             <Blogs ref={blogRef} />

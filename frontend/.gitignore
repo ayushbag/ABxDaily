@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+./assets/trace.svg
+trace.svg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

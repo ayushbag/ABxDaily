@@ -1,14 +1,14 @@
 import React from 'react'
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import MiniHero from './MiniHero';
-
+import BACKGROUND from '../assets/3.png'
 
 const Hero = ({ onScrollToBlogs }) => {
 
   return (
-    <section className='max-w-7xl mx-auto mt-12 md:mt-28 px-6 flex flex-col items-start sm:items-center '>
+    <section className='max-w-7xl z-10 mx-auto mt-12 md:mt-28 px-6 flex flex-col items-start sm:items-center'>
       <MiniHero />
-      <div className='flex flex-col text-center text-white gap-6'>
+      <div className='flex z-10 flex-col text-center text-white gap-6'>
         <h1 className='sm:text-6xl lg:text-7xl text-4xl font-bold font-dmsans tracking-normal sm:text-center text-start flex-wrap'>
           Fresh Perspectives, <br />
           <span className='bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 bg-clip-text
@@ -27,6 +27,9 @@ const Hero = ({ onScrollToBlogs }) => {
         Start Reading <HiMiniArrowLongRight />
       </button>
       <div className='border-b-[0.1rem] border-zinc-700 w-full sm:mt-20 mt-10 z-20' />
+      <div className='z-0 absolute h-screen w-full sm:top-0 top-7 opacity-0 sm:opacity-15'>
+        {<img src={BACKGROUND} /> || null}
+      </div>
     </section>
   )
 }

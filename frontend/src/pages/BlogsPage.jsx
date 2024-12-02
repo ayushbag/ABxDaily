@@ -1,29 +1,43 @@
-import { useContext } from 'react'
-import { BlogContext } from '../contexts/BlogContext'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
 import 'github-markdown-css';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 
 const BlogsPage = () => {
 
-  const { blogs, loading, error } = useContext(BlogContext)
+  const [blogContent, setBlogContent] = useState(null)
+  const [ loading, setLoading ] = useState(false)
+  const { title } = useParams()
 
-  const loadingText = <div className='h-[100vh] w-full mx-auto flex items-center justify-center'>Loading...</div>
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true)
+        const response = await axios.get(
+          `https://raw.githubusercontent.com/ayushbag/BlogsFiles/main/${title}`
+        )
+        setBlogContent(response.data)
+        setLoading(false)
+      } catch (error) {
+        console.log(error);
+        console.log("Error While Fetching Data");
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [])
+  
 
   return (
-    <div className='markdown-body p-4 sm:p-10 lg:p-12 bg-zinc-950'>
-      {error && <p>Error!</p>}
-      {loading ? loadingText
-      :
-      <ReactMarkdown>
-        {blogs[0]}
-      </ReactMarkdown>
-      }
-      {/* {blogs.map((item) => (
-        <ReactMarkdown>{item}</ReactMarkdown>
-      ))} */}
-    </div>
+    <section className='w-full h-full bg-zinc-950'>
+      <div className='markdown-body max-w-4xl mx-auto p-4 sm:p-10 lg:p-12 bg-zinc-950'>
+        <ReactMarkdown>
+          {blogContent}
+        </ReactMarkdown>
+      </div>
+    </section>
   )
 }
 

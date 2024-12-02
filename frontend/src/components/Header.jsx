@@ -10,15 +10,16 @@ const Header = () => {
 
     return (
         <section>
-            <div className='max-w-7xl z-20 sticky mx-auto flex justify-between items-center px-6 md:px-12 py-5 bg-transparent text-white'>
+            <div className='max-w-7xl z-20 w-full sticky mx-auto flex justify-between items-center px-6 md:px-12 py-5 bg-transparent text-white'>
                 <div className='text-white flex'>
                     <img className='text-white -translate-x-1' src={trace} width={40} alt="AB" />
                     <div className='flex pt-2 -translate-x-2 font-medium tracking-normal font-sans text-lg text-zinc-50/40'>xDaily</div>
                 </div>
                 <div className='md:flex gap-20 hidden'>
                     <div className='flex items-center gap-2 text-sm pt-1 font-sans'>
-                        <Link className='hover:bg-zinc-50/10 px-4 py-2 rounded-lg' to='/'>Home</Link> 
-                        <Link className='hover:bg-zinc-50/10 px-4 py-2 rounded-lg' to='/about'>About me</Link> 
+                        {/* <Link>Go to Blogs</Link> */}
+                        {/* <Link className='hover:bg-zinc-50/10 px-4 py-2 rounded-lg' to='/'>Home</Link> 
+                        <Link className='hover:bg-zinc-50/10 px-4 py-2 rounded-lg' to='/about'>About me</Link>  */}
                         {/* <Link className='px-4 py-2 hover:border-b-2 rounded-sm border-lime-300' to='/github'>Github</Link>  */}
                         {/* <Link className='px-4 py-2 hover:border-b-2 rounded-sm border-lime-300' to='/Twitter'>𝕏</Link> */}
                     </div>
