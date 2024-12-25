@@ -27,9 +27,9 @@ const Hero = ({ onScrollToBlogs }) => {
         Start Reading <HiMiniArrowLongRight />
       </button>
       <div className='border-b-[0.1rem] border-zinc-700 w-full sm:mt-20 mt-10 z-20' />
-      <div className='z-0 absolute h-screen w-full sm:top-0 top-7 opacity-0 sm:opacity-15'>
+      {/* <div className='z-0 overflow-x-auto absolute h-screen w-full sm:top-0 top-7 opacity-0 sm:opacity-15'>
         {<img src={BACKGROUND} /> || null}
-      </div>
+      </div> */}
     </section>
   )
 }

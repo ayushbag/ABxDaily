@@ -3,7 +3,6 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Blogs from '../components/Blogs'
 import Footer from '../components/Footer'
-import mesh from '../assets/mesh.jpg'
 
 const Layout = () => {
 
@@ -15,7 +14,7 @@ const Layout = () => {
 
   return (
     <>
-        <div className='bg-zinc-900 w-full'>
+        <div className='bg-zinc-900 overflow-x-hidden'>
             <Header />            
             <Hero onScrollToBlogs={scrollToBlogs} />
             <Blogs ref={blogRef} />
