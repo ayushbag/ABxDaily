@@ -14,12 +14,16 @@ const Layout = () => {
 
   return (
     <>
-        <div className='bg-zinc-900 overflow-x-hidden'>
-            <Header />            
+      <div className='bg-zinc-900 overflow-x-hidden'>
+      <div className='md:h-screen md:bg-[url("./3.png")] md:bg-cover md:bg-center md:bg-no-repeat bg-opacity-50 bg-none'>
+          <div className='bg-zinc-900 bg-opacity-75 w-full h-full'>
+            <Header />
             <Hero onScrollToBlogs={scrollToBlogs} />
-            <Blogs ref={blogRef} />
-            <Footer />
+          </div>
         </div>
+        <Blogs ref={blogRef} />
+        <Footer />
+      </div>
     </>
   )
 }

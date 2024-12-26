@@ -6,9 +6,12 @@ import BACKGROUND from '../assets/3.png'
 const Hero = ({ onScrollToBlogs }) => {
 
   return (
-    <section className='max-w-7xl z-10 mx-auto mt-12 md:mt-28 px-6 flex flex-col items-start sm:items-center'>
+    <div className='
+    max-w-7xl z-10 mx-auto mt-12 md:mt-28 px-6 flex 
+    flex-col items-start sm:items-center
+    '>
       <MiniHero />
-      <div className='flex z-10 flex-col text-center text-white gap-6'>
+      <div className='flex flex-col text-center text-white gap-6'>
         <h1 className='sm:text-6xl lg:text-7xl text-4xl font-bold font-dmsans tracking-normal sm:text-center text-start flex-wrap'>
           Fresh Perspectives, <br />
           <span className='bg-gradient-to-r from-lime-300 via-emerald-500 to-cyan-400 bg-clip-text
@@ -20,17 +23,14 @@ const Hero = ({ onScrollToBlogs }) => {
           Welcome to ABxDaily - sharing articles, insights and more.
         </p>
       </div>
-      <button onClick={onScrollToBlogs} className='flex z-10 bg-gradient-to-br text-zinc-900 shadow-xl font-medium from-lime-500
+      <button onClick={onScrollToBlogs} className='flex bg-gradient-to-br text-zinc-900 shadow-xl font-medium from-lime-500
        to-sky-400 mt-4 rounded-lg text-center gap-2 items-center text-sm px-6 py-2 sm:text-base sm:mt-12 lg:mt-16 lg:text-lg 
        hover:text-zinc-800 hover:shadow-lg ease-in-out duration-100 transition-colors font-sans
        '>
         Start Reading <HiMiniArrowLongRight />
       </button>
       <div className='border-b-[0.1rem] border-zinc-700 w-full sm:mt-20 mt-10 z-20' />
-      {/* <div className='z-0 overflow-x-auto absolute h-screen w-full sm:top-0 top-7 opacity-0 sm:opacity-15'>
-        {<img src={BACKGROUND} /> || null}
-      </div> */}
-    </section>
+    </div>
   )
 }
 
