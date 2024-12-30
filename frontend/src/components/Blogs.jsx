@@ -7,13 +7,17 @@ const Blogs = forwardRef((prop, ref) =>  {
 
   const [blogsTitle, setBlogsTitle] = useState([])
   const [loading, setLoading] = useState(false)
-  
   useEffect(() => {
       async function fetchData() {
           try {
               setLoading(true)
               const response = await axios.get(
-                'https://api.github.com/repos/ayushbag/BlogsFiles/contents'
+                'https://api.github.com/repos/ayushbag/BlogsFiles/contents',
+                {
+                  headers: {
+                    Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`
+                  }
+                }
               ) 
 
               setBlogsTitle(response.data
@@ -32,9 +36,10 @@ const Blogs = forwardRef((prop, ref) =>  {
       }
 
       fetchData()
-      console.log(blogsTitle);
   }, [])
 
+
+  console.log(blogsTitle);
 
   return (
     <section ref={ref} className='max-w-6xl mx-auto px-6 sm:px-12 sm:mt-6 gap-4 flex flex-col'>
